@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CardsCookin</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">CardsCookin</div>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search recipes...">
+            <div class="filter-container">
+                <select id="filterCategory">
+                    <option value="">All Categories</option>
+                    <option value="breakfast">Breakfast</option>
+                    <option value="lunch">Lunch</option>
+                    <option value="dinner">Dinner</option>
+                    <option value="dessert">Dessert</option>
+                </select>
+                <select id="filterTime">
+                    <option value="">Cook Time</option>
+                    <option value="15">Under 15 mins</option>
+                    <option value="30">Under 30 mins</option>
+                    <option value="60">Under 1 hour</option>
+                </select>
+                <select id="filterFavorites">
+                    <option value="">All Recipes</option>
+                    <option value="favorites">Favorites Only</option>
+                </select>
+            </div>
+        </div>
+        <button id="addRecipeBtn" class="btn-primary">Add Recipe</button>
+    </nav>
+
+    <main>
+        <section id="recipesContainer" class="recipes-grid"></section>
+
+        <!-- Add/Edit Recipe-->
+        <div id="recipeModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Add New Recipe</h2>
+                <form id="recipeForm">
+                    <input type="hidden" id="recipeId">
+                    <div class="form-group">
+                        <label for="recipeName">Recipe Name</label>
+                        <input type="text" id="recipeName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="recipeCategory">Category</label>
+                        <select id="recipeCategory" required>
+                            <option value="breakfast">Breakfast</option>
+                            <option value="lunch">Lunch</option>
+                            <option value="dinner">Dinner</option>
+                            <option value="dessert">Dessert</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="cookTime">Cook Time (minutes)</label>
+                        <input type="number" id="cookTime" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="ingredients">Ingredients</label>
+                        <textarea id="ingredients" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="instructions">Instructions</label>
+                        <textarea id="instructions" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="recipeImage">Image URL</label>
+                        <input type="url" id="recipeImage">
+                    </div>
+                    <button type="submit" class="btn-primary">Save Recipe</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script src="main.js"></script>
+    <script src="recipes.js"></script>
+    <script src="favorites.js"></script>
+    <script src="searchbar.js"></script>
+</body>
+</html>
